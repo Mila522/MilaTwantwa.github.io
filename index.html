@@ -1,134 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bandile | Developer Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mila Twantwa | Data Engineer Portfolio</title>
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background: #0f172a;
-            color: #e2e8f0;
-        }
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #0b1220;
+        color: #e5e7eb;
+    }
 
-        header {
-            background: #1e293b;
-            padding: 40px;
-            text-align: center;
-        }
+    header {
+        background: #111827;
+        padding: 50px 20px;
+        text-align: center;
+    }
 
-        header h1 {
-            margin: 0;
-            font-size: 36px;
-        }
+    header h1 {
+        margin: 0;
+        font-size: 38px;
+    }
 
-        header p {
-            color: #94a3b8;
-        }
+    header p {
+        color: #94a3b8;
+        font-size: 18px;
+    }
 
-        .container {
-            max-width: 900px;
-            margin: auto;
-            padding: 20px;
-        }
+    .container {
+        max-width: 1000px;
+        margin: auto;
+        padding: 20px;
+    }
 
-        .card {
-            background: #1e293b;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 12px;
-        }
+    .card {
+        background: #111827;
+        margin: 20px 0;
+        padding: 20px;
+        border-radius: 12px;
+        border: 1px solid #1f2937;
+    }
 
-        h2 {
-            border-left: 4px solid #38bdf8;
-            padding-left: 10px;
-        }
+    h2 {
+        color: #38bdf8;
+        margin-bottom: 10px;
+    }
 
-        a {
-            color: #38bdf8;
-            text-decoration: none;
-        }
+    a {
+        color: #60a5fa;
+        text-decoration: none;
+    }
 
-        a:hover {
-            text-decoration: underline;
-        }
+    a:hover {
+        text-decoration: underline;
+    }
 
-        .skills span {
-            display: inline-block;
-            background: #334155;
-            padding: 5px 10px;
-            margin: 5px;
-            border-radius: 8px;
-            font-size: 14px;
-        }
+    .tag {
+        display: inline-block;
+        background: #1f2937;
+        padding: 5px 10px;
+        margin: 5px;
+        border-radius: 8px;
+        font-size: 13px;
+    }
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            color: #64748b;
-        }
-    </style>
+    .project {
+        margin-bottom: 12px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #1f2937;
+    }
+
+    footer {
+        text-align: center;
+        padding: 20px;
+        color: #64748b;
+    }
+</style>
 </head>
 
 <body>
 
 <header>
-    <h1>Hi, I'm Bandile 👋</h1>
-    <p>Aspiring Software Developer & Cybersecurity Enthusiast</p>
+    <h1>Mila Twantwa</h1>
+    <p>Data Engineering & Data Science Enthusiast | ICT Student @ DUT</p>
 </header>
 
 <div class="container">
 
-    <div class="card">
-        <h2>👨‍💻 About Me</h2>
-        <p>
-            I am a motivated IT student focused on software development and cybersecurity.
-            I enjoy solving problems, building projects, and learning how systems work.
-        </p>
+<!-- ABOUT -->
+<div class="card">
+    <h2>👨‍💻 About Me</h2>
+    <p>
+        Final-year ICT student at Durban University of Technology with strong interest in Data Engineering and Data Science.
+        I enjoy building data pipelines, working with APIs, and solving real-world data problems using Python and SQL.
+    </p>
+</div>
+
+<!-- CONTACT -->
+<div class="card">
+    <h2>📬 Contact</h2>
+    <p>Email: <a href="mailto:milatwantwa522@yahoo.com">milatwantwa522@yahoo.com</a></p>
+    <p>GitHub: <a href="https://github.com/Mila522">github.com/Mila522</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/mila-twantwa-121687337/">View Profile</a></p>
+</div>
+
+<!-- SKILLS -->
+<div class="card">
+    <h2>🛠 Skills</h2>
+    <span class="tag">Python</span>
+    <span class="tag">Java</span>
+    <span class="tag">SQL</span>
+    <span class="tag">Pandas</span>
+    <span class="tag">Git</span>
+    <span class="tag">GitHub</span>
+    <span class="tag">VS Code</span>
+    <span class="tag">Android Studio</span>
+    <span class="tag">Data Pipelines</span>
+    <span class="tag">ETL Processes</span>
+</div>
+
+<!-- PROJECTS -->
+<div class="card">
+    <h2>💼 Projects</h2>
+
+    <div class="project">
+        <b>Weather Data Extraction Pipeline</b><br>
+        Python API pipeline using South African Weather Service data, cleaned with Pandas.
+        <br><a href="https://github.com/Mila522/weather-etl-pipeline">View Project</a>
     </div>
 
-    <div class="card">
-        <h2>🛠 Skills</h2>
-        <div class="skills">
-            <span>Java</span>
-            <span>HTML</span>
-            <span>CSS</span>
-            <span>GitHub</span>
-            <span>RMI Basics</span>
-            <span>Cybersecurity (TryHackMe)</span>
-        </div>
+    <div class="project">
+        <b>SQL ETL Data Pipeline</b><br>
+        Data transfer and transformation between SQL databases using Python.
+        <br><a href="https://github.com/Mila522/extracting-data-from-databaseSource-to-a-targetDatabase">View Project</a>
     </div>
 
-    <div class="card">
-        <h2>💼 Projects</h2>
-        <ul>
-            <li><a href="https://github.com/yourusername/project1">XSS Practice Lab</a></li>
-            <li><a href="https://github.com/yourusername/project2">Java RMI Assignment</a></li>
-            <li><a href="https://github.com/yourusername/project3">XML Schema Exercise</a></li>
-        </ul>
+    <div class="project">
+        <b>CSV Data Cleaning Pipeline</b><br>
+        Cleans raw datasets, removes duplicates, validates emails, outputs structured CSV.
+        <br><a href="https://github.com/Mila522/RAW-CSV-DATA-CLEANED-INTO-STRUCTURED-CSV">View Project</a>
     </div>
 
-    <div class="card">
-        <h2>📚 Experience</h2>
-        <p>
-            Virtual Cybersecurity Internship – MWR Cybersecurity (TryHackMe labs)<br>
-            Focus: Web vulnerabilities, XSS, basic penetration testing
-        </p>
+    <div class="project">
+        <b>Smart Agriculture Assistant</b><br>
+        AI-based agriculture support system with real-world data integration.
+        <br><a href="https://github.com/Mila522/Smart-Agriculture-assistant">View Project</a>
     </div>
 
-    <div class="card">
-        <h2>📬 Contact</h2>
-        <p>Email: youremail@example.com</p>
-        <p>GitHub: <a href="https://github.com/yourusername">github.com/yourusername</a></p>
+    <div class="project">
+        <b>Alumni Nexus Platform</b><br>
+        Web-based alumni engagement platform for DUT students.
+        <br><a href="https://github.com/Mila522/Alumni-Nexus">View Project</a>
     </div>
 
 </div>
 
+<!-- EXPERIENCE -->
+<div class="card">
+    <h2>💼 Experience</h2>
+    <p>
+        <b>Website Tester – IQHAWE OPERATORS</b><br>
+        Tested website functionality and reported issues for improvement.
+    </p>
+</div>
+
+<!-- EDUCATION -->
+<div class="card">
+    <h2>🎓 Education</h2>
+    <p>Durban University of Technology</p>
+    <p>Bachelor of Information and Communication Technology (Final Year)</p>
+</div>
+
+<!-- CERTIFICATES -->
+<div class="card">
+    <h2>🏆 Certifications</h2>
+    <p>Cisco: IoT & Digital Transformation</p>
+    <p>Cisco: Introduction to Data Science</p>
+    <p>Linux Certification</p>
+    <p>WeThinkCode: Generative AI for Software Engineers</p>
+</div>
+
+<!-- FOOTER -->
 <footer>
-    © 2026 Bandile | Built with GitHub Pages
+    © 2026 Mila Twantwa | Built with GitHub Pages
 </footer>
+
+</div>
 
 </body>
 </html>
