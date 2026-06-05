@@ -3,191 +3,276 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mila Twantwa | Data Engineer Portfolio</title>
+<title>Mila | Data Engineer Portfolio</title>
+
+<!-- ICONS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 
 <style>
-    body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        background: #0b1220;
-        color: #e5e7eb;
-    }
+/* =======================
+   CYBER FUTURISTIC THEME
+======================= */
 
-    header {
-        background: #111827;
-        padding: 50px 20px;
-        text-align: center;
-    }
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: radial-gradient(circle at top, #0b1220, #05070f);
+    color: #e5e7eb;
+    overflow-x: hidden;
+}
 
-    header h1 {
-        margin: 0;
-        font-size: 38px;
-    }
+/* Animated background glow */
+body::before {
+    content: "";
+    position: fixed;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, #0ea5e9, #22c55e, #8b5cf6);
+    opacity: 0.08;
+    animation: moveGlow 12s linear infinite;
+    z-index: -1;
+}
 
-    header p {
-        color: #94a3b8;
-        font-size: 18px;
-    }
+@keyframes moveGlow {
+    0% { transform: translate(0,0); }
+    50% { transform: translate(-10%, -10%); }
+    100% { transform: translate(0,0); }
+}
 
-    .container {
-        max-width: 1000px;
-        margin: auto;
-        padding: 20px;
-    }
+/* HERO SECTION */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    animation: fadeIn 2s ease-in-out;
+}
 
-    .card {
-        background: #111827;
-        margin: 20px 0;
-        padding: 20px;
-        border-radius: 12px;
-        border: 1px solid #1f2937;
-    }
+.hero h1 {
+    font-size: 48px;
+    margin: 0;
+    text-shadow: 0 0 20px #38bdf8;
+}
 
-    h2 {
-        color: #38bdf8;
-        margin-bottom: 10px;
-    }
+.hero p {
+    color: #94a3b8;
+    font-size: 18px;
+}
 
-    a {
-        color: #60a5fa;
-        text-decoration: none;
-    }
+.glow-btn {
+    margin-top: 20px;
+    padding: 12px 20px;
+    border: none;
+    background: #0ea5e9;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 0 15px #0ea5e9;
+    transition: 0.3s;
+}
 
-    a:hover {
-        text-decoration: underline;
-    }
+.glow-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #22c55e;
+}
 
-    .tag {
-        display: inline-block;
-        background: #1f2937;
-        padding: 5px 10px;
-        margin: 5px;
-        border-radius: 8px;
-        font-size: 13px;
-    }
+/* CONTAINER */
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
 
-    .project {
-        margin-bottom: 12px;
-        padding-bottom: 10px;
-        border-bottom: 1px solid #1f2937;
-    }
+/* CARDS */
+.card {
+    background: rgba(17, 24, 39, 0.8);
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    border-radius: 14px;
+    padding: 20px;
+    margin: 20px 0;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s;
+}
 
-    footer {
-        text-align: center;
-        padding: 20px;
-        color: #64748b;
-    }
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* HEADINGS */
+h2 {
+    color: #38bdf8;
+}
+
+/* TECH ICONS */
+.icons i {
+    font-size: 40px;
+    margin: 10px;
+    transition: 0.3s;
+}
+
+.icons i:hover {
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 10px #38bdf8);
+}
+
+/* PROJECT GRID */
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.project {
+    background: #0f172a;
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid #1f2937;
+    transition: 0.3s;
+}
+
+.project:hover {
+    transform: scale(1.03);
+    border-color: #38bdf8;
+}
+
+/* SCREENSHOT PLACEHOLDER */
+.screenshot {
+    width: 100%;
+    height: 120px;
+    background: #1f2937;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+/* HIRE BUTTON */
+.hire {
+    text-align: center;
+    padding: 30px;
+}
+
+.hire button {
+    padding: 15px 25px;
+    background: linear-gradient(90deg, #0ea5e9, #22c55e);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 0 20px #0ea5e9;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
 </style>
 </head>
 
 <body>
 
-<header>
+<!-- HERO -->
+<div class="hero">
     <h1>Mila Twantwa</h1>
-    <p>Data Engineering & Data Science Enthusiast | ICT Student @ DUT</p>
-</header>
+    <p>Data Engineer • Python • SQL • API Systems • ETL Pipelines</p>
+    <button class="glow-btn" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">
+        View Projects
+    </button>
+</div>
 
 <div class="container">
 
 <!-- ABOUT -->
 <div class="card">
-    <h2>👨‍💻 About Me</h2>
+    <h2>🧠 About Me</h2>
     <p>
-        Final-year ICT student at Durban University of Technology with strong interest in Data Engineering and Data Science.
-        I enjoy building data pipelines, working with APIs, and solving real-world data problems using Python and SQL.
+        Final-year ICT student specializing in Data Engineering and Data Science.
+        I build data pipelines, automate data processing, and work with APIs and databases.
     </p>
 </div>
 
-<!-- CONTACT -->
+<!-- TECH STACK -->
 <div class="card">
-    <h2>📬 Contact</h2>
-    <p>Email: <a href="mailto:milatwantwa522@yahoo.com">milatwantwa522@yahoo.com</a></p>
-    <p>GitHub: <a href="https://github.com/Mila522">github.com/Mila522</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/mila-twantwa-121687337/">View Profile</a></p>
+    <h2>⚙️ Tech Stack</h2>
+    <div class="icons">
+        <i class="devicon-python-plain colored"></i>
+        <i class="devicon-java-plain colored"></i>
+        <i class="devicon-mysql-plain colored"></i>
+        <i class="devicon-git-plain colored"></i>
+        <i class="devicon-github-original"></i>
+    </div>
 </div>
 
-<!-- SKILLS -->
-<div class="card">
-    <h2>🛠 Skills</h2>
-    <span class="tag">Python</span>
-    <span class="tag">Java</span>
-    <span class="tag">SQL</span>
-    <span class="tag">Pandas</span>
-    <span class="tag">Git</span>
-    <span class="tag">GitHub</span>
-    <span class="tag">VS Code</span>
-    <span class="tag">Android Studio</span>
-    <span class="tag">Data Pipelines</span>
-    <span class="tag">ETL Processes</span>
-</div>
+<!-- PROJECTS (AUTO + MANUAL FEEL) -->
+<div class="card" id="projects">
+    <h2>🚀 Projects (Live Work)</h2>
+    <div class="projects">
 
-<!-- PROJECTS -->
-<div class="card">
-    <h2>💼 Projects</h2>
+        <div class="project">
+            <div class="screenshot"></div>
+            <b>Weather ETL Pipeline</b>
+            <p>API data extraction + cleaning using Python & Pandas</p>
+            <a href="https://github.com/Mila522/weather-etl-pipeline">GitHub →</a>
+        </div>
 
-    <div class="project">
-        <b>Weather Data Extraction Pipeline</b><br>
-        Python API pipeline using South African Weather Service data, cleaned with Pandas.
-        <br><a href="https://github.com/Mila522/weather-etl-pipeline">View Project</a>
+        <div class="project">
+            <div class="screenshot"></div>
+            <b>SQL ETL Pipeline</b>
+            <p>Database-to-database data transfer system</p>
+            <a href="https://github.com/Mila522/extracting-data-from-databaseSource-to-a-targetDatabase">GitHub →</a>
+        </div>
+
+        <div class="project">
+            <div class="screenshot"></div>
+            <b>CSV Data Cleaning</b>
+            <p>Automated dataset cleaning system</p>
+            <a href="https://github.com/Mila522/RAW-CSV-DATA-CLEANED-INTO-STRUCTURED-CSV">GitHub →</a>
+        </div>
+
+        <div class="project">
+            <div class="screenshot"></div>
+            <b>Smart Agriculture AI</b>
+            <p>Data-driven agriculture assistant system</p>
+            <a href="https://github.com/Mila522/Smart-Agriculture-assistant">GitHub →</a>
+        </div>
+
     </div>
-
-    <div class="project">
-        <b>SQL ETL Data Pipeline</b><br>
-        Data transfer and transformation between SQL databases using Python.
-        <br><a href="https://github.com/Mila522/extracting-data-from-databaseSource-to-a-targetDatabase">View Project</a>
-    </div>
-
-    <div class="project">
-        <b>CSV Data Cleaning Pipeline</b><br>
-        Cleans raw datasets, removes duplicates, validates emails, outputs structured CSV.
-        <br><a href="https://github.com/Mila522/RAW-CSV-DATA-CLEANED-INTO-STRUCTURED-CSV">View Project</a>
-    </div>
-
-    <div class="project">
-        <b>Smart Agriculture Assistant</b><br>
-        AI-based agriculture support system with real-world data integration.
-        <br><a href="https://github.com/Mila522/Smart-Agriculture-assistant">View Project</a>
-    </div>
-
-    <div class="project">
-        <b>Alumni Nexus Platform</b><br>
-        Web-based alumni engagement platform for DUT students.
-        <br><a href="https://github.com/Mila522/Alumni-Nexus">View Project</a>
-    </div>
-
 </div>
 
 <!-- EXPERIENCE -->
 <div class="card">
     <h2>💼 Experience</h2>
-    <p>
-        <b>Website Tester – IQHAWE OPERATORS</b><br>
-        Tested website functionality and reported issues for improvement.
-    </p>
+    <p>Website Tester – IQHAWE OPERATORS</p>
 </div>
 
-<!-- EDUCATION -->
-<div class="card">
-    <h2>🎓 Education</h2>
-    <p>Durban University of Technology</p>
-    <p>Bachelor of Information and Communication Technology (Final Year)</p>
-</div>
-
-<!-- CERTIFICATES -->
+<!-- CERTS -->
 <div class="card">
     <h2>🏆 Certifications</h2>
-    <p>Cisco: IoT & Digital Transformation</p>
-    <p>Cisco: Introduction to Data Science</p>
-    <p>Linux Certification</p>
-    <p>WeThinkCode: Generative AI for Software Engineers</p>
+    <p>Cisco IoT • Data Science • Linux • Generative AI (WeThinkCode)</p>
 </div>
 
-<!-- FOOTER -->
-<footer>
-    © 2026 Mila Twantwa | Built with GitHub Pages
-</footer>
+<!-- HIRE ME -->
+<div class="hire">
+    <h2>💼 Want to work with me?</h2>
+    <button onclick="window.location.href='mailto:milatwantwa522@yahoo.com'">
+        Hire Me 🚀
+    </button>
+</div>
 
 </div>
+
+<script>
+// Smooth fade-in effect on scroll
+const cards = document.querySelectorAll('.card');
+
+window.addEventListener('scroll', () => {
+    cards.forEach(card => {
+        const rect = card.getBoundingClientRect();
+        if(rect.top < window.innerHeight - 100){
+            card.style.opacity = 1;
+            card.style.transform = "translateY(0)";
+        }
+    });
+});
+</script>
 
 </body>
 </html>
