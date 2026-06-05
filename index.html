@@ -5,273 +5,288 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mila | Data Engineer Portfolio</title>
 
-<!-- ICONS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-
 <style>
-/* =======================
-   CYBER FUTURISTIC THEME
-======================= */
+/* =========================
+   SPACE + GLASS THEME
+========================= */
 
 body {
     margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: radial-gradient(circle at top, #0b1220, #05070f);
-    color: #e5e7eb;
+    font-family: "Segoe UI", sans-serif;
+    color: white;
+    background: black;
     overflow-x: hidden;
 }
 
-/* Animated background glow */
-body::before {
-    content: "";
+/* STAR BACKGROUND */
+.stars, .stars2, .stars3 {
     position: fixed;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(45deg, #0ea5e9, #22c55e, #8b5cf6);
-    opacity: 0.08;
-    animation: moveGlow 12s linear infinite;
-    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-repeat: repeat;
+    z-index: -3;
 }
 
-@keyframes moveGlow {
-    0% { transform: translate(0,0); }
-    50% { transform: translate(-10%, -10%); }
-    100% { transform: translate(0,0); }
+.stars {
+    background-image: radial-gradient(white 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: moveStars 120s linear infinite;
+    opacity: 0.3;
 }
 
-/* HERO SECTION */
+.stars2 {
+    background-image: radial-gradient(#38bdf8 1px, transparent 1px);
+    background-size: 80px 80px;
+    animation: moveStars 180s linear infinite;
+    opacity: 0.2;
+}
+
+.stars3 {
+    background-image: radial-gradient(#a855f7 1px, transparent 1px);
+    background-size: 120px 120px;
+    animation: moveStars 240s linear infinite;
+    opacity: 0.15;
+}
+
+@keyframes moveStars {
+    from {transform: translateY(0px);}
+    to {transform: translateY(-2000px);}
+}
+
+/* LOADING SCREEN */
+.loader {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 999;
+    animation: fadeOut 2s ease forwards;
+    animation-delay: 2.5s;
+}
+
+.loader h1 {
+    font-size: 22px;
+    letter-spacing: 4px;
+    color: #38bdf8;
+    animation: pulse 1s infinite;
+}
+
+@keyframes fadeOut {
+    to {opacity: 0; visibility: hidden;}
+}
+
+@keyframes pulse {
+    0% {opacity: 0.4;}
+    50% {opacity: 1;}
+    100% {opacity: 0.4;}
+}
+
+/* GLASS CARD */
+.glass {
+    background: rgba(255,255,255,0.06);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 0 25px rgba(56,189,248,0.1);
+    transition: 0.3s;
+}
+
+.glass:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 40px rgba(56,189,248,0.25);
+}
+
+/* HERO */
 .hero {
     text-align: center;
-    padding: 100px 20px;
-    animation: fadeIn 2s ease-in-out;
+    padding: 120px 20px 60px;
 }
 
 .hero h1 {
-    font-size: 48px;
+    font-size: 50px;
     margin: 0;
     text-shadow: 0 0 20px #38bdf8;
 }
 
 .hero p {
     color: #94a3b8;
-    font-size: 18px;
 }
 
-.glow-btn {
-    margin-top: 20px;
-    padding: 12px 20px;
-    border: none;
-    background: #0ea5e9;
+/* NAV */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 15px;
+    text-align: center;
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(10px);
+    z-index: 10;
+}
+
+nav a {
     color: white;
-    border-radius: 8px;
-    cursor: pointer;
-    box-shadow: 0 0 15px #0ea5e9;
+    margin: 0 15px;
+    text-decoration: none;
     transition: 0.3s;
 }
 
-.glow-btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 25px #22c55e;
+nav a:hover {
+    color: #38bdf8;
 }
 
-/* CONTAINER */
+/* SECTIONS */
 .container {
     max-width: 1000px;
     margin: auto;
     padding: 20px;
 }
 
-/* CARDS */
-.card {
-    background: rgba(17, 24, 39, 0.8);
-    border: 1px solid rgba(56, 189, 248, 0.2);
-    border-radius: 14px;
-    padding: 20px;
-    margin: 20px 0;
-    backdrop-filter: blur(10px);
-    transition: transform 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-}
-
-/* HEADINGS */
-h2 {
-    color: #38bdf8;
-}
-
-/* TECH ICONS */
-.icons i {
-    font-size: 40px;
-    margin: 10px;
+/* BUTTON */
+.btn {
+    padding: 12px 18px;
+    background: #38bdf8;
+    border: none;
+    border-radius: 10px;
+    color: black;
+    cursor: pointer;
+    box-shadow: 0 0 20px #38bdf8;
     transition: 0.3s;
 }
 
-.icons i:hover {
-    transform: scale(1.2);
-    filter: drop-shadow(0 0 10px #38bdf8);
+.btn:hover {
+    transform: scale(1.05);
 }
 
 /* PROJECT GRID */
-.projects {
+.grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 15px;
 }
 
-.project {
-    background: #0f172a;
-    padding: 15px;
-    border-radius: 12px;
-    border: 1px solid #1f2937;
-    transition: 0.3s;
+/* CERT LINKS */
+a {
+    color: #38bdf8;
 }
 
-.project:hover {
-    transform: scale(1.03);
-    border-color: #38bdf8;
-}
-
-/* SCREENSHOT PLACEHOLDER */
-.screenshot {
-    width: 100%;
-    height: 120px;
-    background: #1f2937;
-    border-radius: 8px;
-    margin-bottom: 10px;
-}
-
-/* HIRE BUTTON */
-.hire {
-    text-align: center;
-    padding: 30px;
-}
-
-.hire button {
-    padding: 15px 25px;
-    background: linear-gradient(90deg, #0ea5e9, #22c55e);
-    border: none;
-    border-radius: 10px;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    box-shadow: 0 0 20px #0ea5e9;
-}
-
-/* ANIMATION */
-@keyframes fadeIn {
-    from {opacity: 0; transform: translateY(20px);}
-    to {opacity: 1; transform: translateY(0);}
-}
 </style>
 </head>
 
 <body>
 
+<!-- LOADING SCREEN -->
+<div class="loader">
+    <h1>BOOTING PORTFOLIO...</h1>
+</div>
+
+<!-- STAR BACKGROUND -->
+<div class="stars"></div>
+<div class="stars2"></div>
+<div class="stars3"></div>
+
+<!-- NAV -->
+<nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#certs">Certificates</a>
+    <a href="#contact">Contact</a>
+</nav>
+
 <!-- HERO -->
 <div class="hero">
     <h1>Mila Twantwa</h1>
-    <p>Data Engineer • Python • SQL • API Systems • ETL Pipelines</p>
-    <button class="glow-btn" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">
-        View Projects
+    <p>Data Engineer • Python • SQL • ETL Systems • APIs</p>
+    <button class="btn" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">
+        Enter Portfolio
     </button>
 </div>
 
 <div class="container">
 
 <!-- ABOUT -->
-<div class="card">
+<div id="about" class="glass">
     <h2>🧠 About Me</h2>
     <p>
-        Final-year ICT student specializing in Data Engineering and Data Science.
-        I build data pipelines, automate data processing, and work with APIs and databases.
+        Final-year ICT student focused on Data Engineering, building data pipelines, APIs, and scalable systems.
     </p>
 </div>
 
-<!-- TECH STACK -->
-<div class="card">
-    <h2>⚙️ Tech Stack</h2>
-    <div class="icons">
-        <i class="devicon-python-plain colored"></i>
-        <i class="devicon-java-plain colored"></i>
-        <i class="devicon-mysql-plain colored"></i>
-        <i class="devicon-git-plain colored"></i>
-        <i class="devicon-github-original"></i>
-    </div>
-</div>
+<!-- PROJECTS -->
+<div id="projects" class="glass">
+    <h2>🚀 Projects</h2>
 
-<!-- PROJECTS (AUTO + MANUAL FEEL) -->
-<div class="card" id="projects">
-    <h2>🚀 Projects (Live Work)</h2>
-    <div class="projects">
+    <div class="grid">
 
-        <div class="project">
-            <div class="screenshot"></div>
-            <b>Weather ETL Pipeline</b>
-            <p>API data extraction + cleaning using Python & Pandas</p>
-            <a href="https://github.com/Mila522/weather-etl-pipeline">GitHub →</a>
+        <div class="glass">
+            Weather ETL Pipeline<br>
+            <a href="https://github.com/Mila522/weather-etl-pipeline">GitHub</a>
         </div>
 
-        <div class="project">
-            <div class="screenshot"></div>
-            <b>SQL ETL Pipeline</b>
-            <p>Database-to-database data transfer system</p>
-            <a href="https://github.com/Mila522/extracting-data-from-databaseSource-to-a-targetDatabase">GitHub →</a>
+        <div class="glass">
+            SQL ETL Pipeline<br>
+            <a href="https://github.com/Mila522/extracting-data-from-databaseSource-to-a-targetDatabase">GitHub</a>
         </div>
 
-        <div class="project">
-            <div class="screenshot"></div>
-            <b>CSV Data Cleaning</b>
-            <p>Automated dataset cleaning system</p>
-            <a href="https://github.com/Mila522/RAW-CSV-DATA-CLEANED-INTO-STRUCTURED-CSV">GitHub →</a>
+        <div class="glass">
+            CSV Cleaning Pipeline<br>
+            <a href="https://github.com/Mila522/RAW-CSV-DATA-CLEANED-INTO-STRUCTURED-CSV">GitHub</a>
         </div>
 
-        <div class="project">
-            <div class="screenshot"></div>
-            <b>Smart Agriculture AI</b>
-            <p>Data-driven agriculture assistant system</p>
-            <a href="https://github.com/Mila522/Smart-Agriculture-assistant">GitHub →</a>
+        <div class="glass">
+            Smart Agriculture AI<br>
+            <a href="https://github.com/Mila522/Smart-Agriculture-assistant">GitHub</a>
         </div>
 
     </div>
 </div>
 
-<!-- EXPERIENCE -->
-<div class="card">
-    <h2>💼 Experience</h2>
-    <p>Website Tester – IQHAWE OPERATORS</p>
+<!-- CERTIFICATES -->
+<div id="certs" class="glass">
+    <h2>🏆 Certificates</h2>
+
+    <p>
+        <b>Generative AI for Software Engineers</b><br>
+        :contentReference[oaicite:0]{index=0}
+    </p>
+
+    <p>
+        <b>Introduction to Data Science (Cisco)</b><br>
+        :contentReference[oaicite:1]{index=1}
+    </p>
+
+    <p>
+        <b>Introduction to IoT (Cisco)</b><br>
+        :contentReference[oaicite:2]{index=2}
+    </p>
+
 </div>
 
-<!-- CERTS -->
-<div class="card">
-    <h2>🏆 Certifications</h2>
-    <p>Cisco IoT • Data Science • Linux • Generative AI (WeThinkCode)</p>
-</div>
-
-<!-- HIRE ME -->
-<div class="hire">
-    <h2>💼 Want to work with me?</h2>
-    <button onclick="window.location.href='mailto:milatwantwa522@yahoo.com'">
-        Hire Me 🚀
+<!-- CONTACT -->
+<div id="contact" class="glass">
+    <h2>📬 Hire Me</h2>
+    <p>Email: milatwantwa522@yahoo.com</p>
+    <button class="btn" onclick="window.location.href='mailto:milatwantwa522@yahoo.com'">
+        Contact Me
     </button>
 </div>
 
 </div>
 
 <script>
-// Smooth fade-in effect on scroll
-const cards = document.querySelectorAll('.card');
-
-window.addEventListener('scroll', () => {
-    cards.forEach(card => {
-        const rect = card.getBoundingClientRect();
-        if(rect.top < window.innerHeight - 100){
-            card.style.opacity = 1;
-            card.style.transform = "translateY(0)";
-        }
-    });
-});
+// smoother reveal feel
+setTimeout(() => {
+    document.querySelector('.loader').style.display = 'none';
+}, 2500);
 </script>
 
 </body>
