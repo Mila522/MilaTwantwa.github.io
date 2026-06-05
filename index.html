@@ -1,23 +1,134 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bandile | Developer Portfolio</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #0f172a;
+            color: #e2e8f0;
+        }
+
+        header {
+            background: #1e293b;
+            padding: 40px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+
+        header p {
+            color: #94a3b8;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .card {
+            background: #1e293b;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 12px;
+        }
+
+        h2 {
+            border-left: 4px solid #38bdf8;
+            padding-left: 10px;
+        }
+
+        a {
+            color: #38bdf8;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .skills span {
+            display: inline-block;
+            background: #334155;
+            padding: 5px 10px;
+            margin: 5px;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #64748b;
+        }
+    </style>
 </head>
+
 <body>
+
+<header>
     <h1>Hi, I'm Bandile 👋</h1>
-    <p>I am an aspiring developer learning software development and cybersecurity.</p>
+    <p>Aspiring Software Developer & Cybersecurity Enthusiast</p>
+</header>
 
-    <h2>💻 My Projects</h2>
-    <ul>
-        <li>
-            <a href="https://github.com/yourusername/project1">Project 1</a>
-        </li>
-        <li>
-            <a href="https://github.com/yourusername/project2">Project 2</a>
-        </li>
-    </ul>
+<div class="container">
 
-    <h2>📬 Contact</h2>
-    <p>Email: youremail@example.com</p>
+    <div class="card">
+        <h2>👨‍💻 About Me</h2>
+        <p>
+            I am a motivated IT student focused on software development and cybersecurity.
+            I enjoy solving problems, building projects, and learning how systems work.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>🛠 Skills</h2>
+        <div class="skills">
+            <span>Java</span>
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>GitHub</span>
+            <span>RMI Basics</span>
+            <span>Cybersecurity (TryHackMe)</span>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>💼 Projects</h2>
+        <ul>
+            <li><a href="https://github.com/yourusername/project1">XSS Practice Lab</a></li>
+            <li><a href="https://github.com/yourusername/project2">Java RMI Assignment</a></li>
+            <li><a href="https://github.com/yourusername/project3">XML Schema Exercise</a></li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>📚 Experience</h2>
+        <p>
+            Virtual Cybersecurity Internship – MWR Cybersecurity (TryHackMe labs)<br>
+            Focus: Web vulnerabilities, XSS, basic penetration testing
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>📬 Contact</h2>
+        <p>Email: youremail@example.com</p>
+        <p>GitHub: <a href="https://github.com/yourusername">github.com/yourusername</a></p>
+    </div>
+
+</div>
+
+<footer>
+    © 2026 Bandile | Built with GitHub Pages
+</footer>
+
 </body>
 </html>
